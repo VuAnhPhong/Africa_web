@@ -1,0 +1,257 @@
+---
+interface Props { title?: string; currentPage: string; }
+const { title = 'VANDAMAFRICA', currentPage } = Astro.props;
+const dashboardUrl = import.meta.env.PUBLIC_AFRICA_DASHBOARD_URL?.trim();
+if (dashboardUrl && !/^https?:\/\//i.test(dashboardUrl)) {
+  throw new Error('PUBLIC_AFRICA_DASHBOARD_URL must be an absolute HTTP(S) URL.');
+}
+---
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} — VANDAMAFRICA IMPORT EXPORT CO., LTD</title>
+    
+    <!-- Meta SEO -->
+    <meta name="author" content="CÔNG TY TNHH XUẤT NHẬP KHẨU VANDAMAFRICA" />
+    <meta name="description" content="VANDAMAFRICA — Nhà cung cấp giải pháp xuất nhập khẩu, logistics toàn diện, nông sản, cà phê Lâm Đồng, kho vận và phân phối quốc tế." />
+    <meta name="keywords" content="Vandamafrica, xuất nhập khẩu, logistics, hải quan, kho bãi, cà phê Lâm Đồng, nông sản Việt Nam" />
+    <meta property="og:title" content="VANDAMAFRICA IMPORT EXPORT CO., LTD" />
+    <meta property="og:description" content="Cung cấp các giải pháp xuất nhập khẩu & logistics đáp ứng nhu cầu của từng khách hàng." />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/css/uni-style.css" />
+
+    <!-- Prevent FOUC for saved language -->
+    <script is:inline>
+        (function() {
+            var savedLang = localStorage.getItem('africa_lang');
+            if (savedLang) {
+                document.documentElement.lang = savedLang;
+            }
+        })();
+    </script>
+
+    
+</head>
+<body class="uni-body">
+
+    <!-- ===== LOADING OVERLAY ===== -->
+    <div class="uni-loader" id="uniLoader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <span class="logo-va">VA</span>
+                <div class="logo-title">VANDAMAFRICA</div>
+                <div class="logo-sub">vandamafrica.vn</div>
+            </div>
+            <div class="loader-bar"><div class="bar-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- ===== FULLSCREEN MEGA MENU POPUP ===== -->
+    <div class="menu-popup-overlay" id="menuPopup">
+        <div class="popup-backdrop"></div>
+        <div class="popup-content">
+            <button class="popup-close-btn" id="closeMenuBtn" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="popup-grid">
+                <div class="popup-col">
+                    <span class="popup-cate" data-i18n="mega_cate_intro">Giới thiệu</span>
+                    <ul class="popup-links">
+                        <li><a href="/Company/About" data-i18n="mega_about">Về chúng tôi</a></li>
+                        <li><a href="/Company/History" data-i18n="mega_history">Lịch sử hình thành & phát triển</a></li>
+                        <li><a href="/Company/About#mission" data-i18n="mega_mission">Tầm nhìn & Sứ mệnh</a></li>
+                        <li><a href="/Company/About#core-values" data-i18n="mega_values">Giá trị cốt lõi</a></li>
+                    </ul>
+                </div>
+                <div class="popup-col">
+                    <span class="popup-cate" data-i18n="mega_cate_services">Dịch vụ cốt lõi</span>
+                    <ul class="popup-links">
+                        <li><a href="/Company/Services#customs" data-i18n="mega_service_customs">Đại lý thủ tục hải quan</a></li>
+                        <li><a href="/Company/Services#warehouse" data-i18n="mega_service_warehouse">Kho vận & Phân phối hàng hóa</a></li>
+                        <li><a href="/Company/Services#inland" data-i18n="mega_service_inland">Vận tải nội địa đường bộ & đường thủy</a></li>
+                        <li><a href="/Company/Services#international" data-i18n="mega_service_intl">Vận tải đường biển & hàng không quốc tế</a></li>
+                        <li><a href="/Company/Services#agri" data-i18n="mega_service_agri">Xuất nhập khẩu nông sản & cà phê</a></li>
+                    </ul>
+                </div>
+                <div class="popup-col">
+                    <span class="popup-cate" data-i18n="mega_cate_news">Truyền thông & Tin tức</span>
+                    <ul class="popup-links">
+                        <li><a href="/Company/News" data-i18n="mega_news_events">Tin tức - Sự kiện</a></li>
+                        <li><a href="/Company/News#press" data-i18n="mega_news_press">Góc báo chí</a></li>
+                        <li><a href="/Company/News#market" data-i18n="mega_news_market">Kiến thức & Thị trường</a></li>
+                        <li><a href="/Company/Contact" data-i18n="mega_news_careers">Tuyển dụng</a></li>
+                    </ul>
+                </div>
+                <div class="popup-col">
+                    <span class="popup-cate" data-i18n="mega_cate_contact">Liên hệ & Hệ thống</span>
+                    <ul class="popup-links">
+                        <li><a href="/Company/Contact" data-i18n="mega_contact_network">Mạng lưới chi nhánh</a></li>
+                        <li><a href="/Company/Contact#quote" data-i18n="mega_contact_quote">Yêu cầu báo giá & Tư vấn</a></li>
+                        <li>{dashboardUrl && (<a href={dashboardUrl} class="highlight-link"><i class="fa-solid fa-chart-line me-1"></i><span data-i18n="mega_dashboard_jump">Hệ thống Quản lý (Dashboard)</span></a>)}</li>
+                    </ul>
+                    <div class="popup-contact-info">
+                        <p><i class="fa-solid fa-phone me-2"></i><strong data-i18n="mega_hotline">Hotline: 0908 123 456</strong></p>
+                        <p><i class="fa-solid fa-envelope me-2"></i><strong>Email:</strong> contact@vandamafrica.com</p>
+                        <div class="popup-socials">
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TOP HEADER NAVIGATION ===== -->
+    <header class="uni-header" id="uniHeader">
+        <div class="header-container">
+            <!-- Brand Logo -->
+            <a href="/Company" class="header-brand">
+                <div class="brand-badge">VA</div>
+                <div class="brand-info">
+                    <span class="brand-name">VANDAMAFRICA</span>
+                    <span class="brand-tagline" data-i18n="brand_subtitle">IMPORT EXPORT CO., LTD</span>
+                </div>
+            </a>
+
+            <!-- Menu links ngang -->
+            <nav class="header-nav">
+                <a href="/Company" class:list={["nav-item", { active: currentPage === "Index" }]} data-i18n="nav_home">Trang chủ</a>
+                <a href="/Company/About" class:list={["nav-item", { active: currentPage === "About" }]} data-i18n="nav_about">Giới thiệu</a>
+                <a href="/Company/History" class:list={["nav-item", { active: currentPage === "History" }]} data-i18n="nav_history">Lịch sử</a>
+                <a href="/Company/Services" class:list={["nav-item", { active: currentPage === "Services" }]} data-i18n="nav_services">Dịch vụ</a>
+                <a href="/Company/News" class:list={["nav-item", { active: currentPage === "News" }]} data-i18n="nav_news">Tin tức</a>
+                <a href="/Company/Contact" class:list={["nav-item", { active: currentPage === "Contact" }]} data-i18n="nav_contact">Liên hệ</a>
+            </nav>
+
+            <!-- Right actions -->
+            <div class="header-actions">
+                {dashboardUrl && (<a href={dashboardUrl} class="btn-dashboard-jump" title="Truy cập Bảng điều khiển quản lý" data-i18n-title="mega_dashboard_jump">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <span data-i18n="btn_dashboard">Dashboard</span>
+                </a>)}
+                
+                <!-- Modern Language Switcher -->
+                <div class="lang-switch" id="langSwitch" title="Chuyển đổi ngôn ngữ / Switch Language">
+                    <button type="button" class="lang-btn active" data-lang="vi">VN</button>
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                </div>
+
+                <!-- Animated Hamburger Button -->
+                <button class="hamburger-btn" id="openMenuBtn" aria-label="Open mega menu">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT BODY ===== -->
+    <main class="uni-main-content">
+        <slot />
+    </main>
+
+    <!-- ===== FOOTER SECTION (Uni Logistics Style) ===== -->
+    <footer class="uni-footer" id="wrap_footer">
+        <!-- Top Footer (Newsletter & Socials) -->
+        <div class="footer-top">
+            <div class="footer-container">
+                <div class="footer-top-row">
+                    <div class="social-side">
+                        <h4 data-i18n="footer_connect">Kết nối với chúng tôi</h4>
+                        <div class="social-icons">
+                            <a href="#" class="soc-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="soc-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="soc-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="soc-btn" aria-label="Zalo"><i class="fa-solid fa-comment-dots"></i></a>
+                        </div>
+                    </div>
+                    <div class="newsletter-side">
+                        <h4 data-i18n="footer_newsletter_title">Đăng ký nhận bản tin xuất nhập khẩu</h4>
+                        <form class="newsletter-form" onsubmit="event.preventDefault(); alert((window.i18nData && window.i18nData[document.documentElement.lang] && window.i18nData[document.documentElement.lang]['footer_newsletter_alert']) || 'Cảm ơn bạn đã đăng ký nhận bản tin VANDAMAFRICA!');">
+                            <input type="email" placeholder="Nhập email của bạn..." data-i18n-ph="footer_newsletter_ph" required />
+                            <button type="submit" data-i18n="footer_newsletter_btn">Đăng Ký</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Footer (Company Info & Branch Network) -->
+        <div class="footer-main">
+            <div class="footer-container">
+                <div class="company-head-block">
+                    <h3 data-i18n="footer_company_name">CÔNG TY TNHH XUẤT NHẬP KHẨU VANDAMAFRICA</h3>
+                    <div class="company-meta-tags">
+                        <span><i class="fa-solid fa-globe"></i> www.vandamafrica.vn</span>
+                        <span><i class="fa-solid fa-envelope"></i> contact@vandamafrica.com</span>
+                        <span><i class="fa-solid fa-barcode"></i> <span data-i18n="footer_mst">MST: 5801509616</span></span>
+                    </div>
+                </div>
+
+                <div class="branches-grid">
+                    <div class="branch-card">
+                        <h5><i class="fa-solid fa-building-columns"></i> <span data-i18n="footer_hq_title">Trụ sở chính (Lâm Đồng):</span></h5>
+                        <p><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer_hq_addr">82/10 Lê Thị Pha, Phường 1, TP. Bảo Lộc, Tỉnh Lâm Đồng</span></p>
+                        <p><i class="fa-solid fa-phone"></i> +84 263 388 9988</p>
+                    </div>
+                    <div class="branch-card">
+                        <h5><i class="fa-solid fa-city"></i> <span data-i18n="footer_hcm_title">Chi nhánh TP. Hồ Chí Minh:</span></h5>
+                        <p><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer_hcm_addr">Tòa nhà Cảng Sài Gòn, Số 3 Nguyễn Tất Thành, Q.4, TP.HCM</span></p>
+                        <p><i class="fa-solid fa-phone"></i> +84 28 3940 5566</p>
+                    </div>
+                    <div class="branch-card">
+                        <h5><i class="fa-solid fa-warehouse"></i> <span data-i18n="footer_bd_title">Trung tâm Logistics Bình Dương:</span></h5>
+                        <p><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer_bd_addr">KCN Nam Tân Uyên, TP. Tân Uyên, Bình Dương</span></p>
+                        <p><i class="fa-solid fa-phone"></i> +84 274 382 1199</p>
+                    </div>
+                    <div class="branch-card">
+                        <h5><i class="fa-solid fa-ship"></i> <span data-i18n="footer_hp_title">Văn phòng Cảng Hải Phòng:</span></h5>
+                        <p><i class="fa-solid fa-location-dot"></i> <span data-i18n="footer_hp_addr">Tòa nhà TD Plaza, Lô 20A Lê Hồng Phong, Ngô Quyền, Hải Phòng</span></p>
+                        <p><i class="fa-solid fa-phone"></i> +84 225 382 8822</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer (Copyright & Back to top) -->
+        <div class="footer-bottom">
+            <div class="footer-container bottom-row">
+                <div class="bottom-links">
+                    <a href="/Company/About" data-i18n="nav_about">Về chúng tôi</a>
+                    <a href="/Company/Services" data-i18n="nav_services">Dịch vụ</a>
+                    <a href="/Company/Contact" data-i18n="footer_terms">Điều khoản & Chính sách</a>
+                    {dashboardUrl && (<a href={dashboardUrl} data-i18n="footer_admin_login">Đăng nhập Quản trị</a>)}
+                </div>
+                <div class="copyright-text" data-i18n="footer_copyright">
+                    © {new Date().getFullYear()} VANDAMAFRICA IMPORT EXPORT CO., LTD. All Rights Reserved.
+                </div>
+                <a href="#uniHeader" class="back-to-top" id="backToTop" aria-label="Back to top">
+                    <i class="fa-solid fa-angle-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- I18n Multilingual Script -->
+    <script is:inline src="/js/uni-i18n.js"></script>
+    <!-- Uni Interaction Script -->
+    <script is:inline src="/js/uni-script.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,164 @@
+---
+import CompanyLayout from "../../layouts/CompanyLayout.astro";
+---
+<CompanyLayout title="Liên Hệ & Mạng Lưới Chi Nhánh — VANDAMAFRICA" currentPage="Contact">
+<!-- Subpage Hero -->
+<section class="subpage-hero">
+    <div class="hero-inner">
+        <h1 data-i18n="page_contact_title">Liên Hệ Với Chúng Tôi</h1>
+        <div class="subpage-breadcrumbs">
+            <a href="/Company" data-i18n="bc_home">Trang chủ</a>
+            <span>/</span>
+            <span style="color: #ffffff;" data-i18n="nav_contact">Liên hệ</span>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Info & Form Section -->
+<section class="uni-section" style="background: #ffffff;">
+    <div class="section-container">
+        <div class="about-grid-layout" style="margin-bottom: 70px;">
+            
+            <!-- Left: Contact Form -->
+            <div id="quote" style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 20px; padding: 40px; box-shadow: var(--uni-card-shadow);">
+                <span class="section-subtitle" data-i18n="contact_form_subtitle">Gửi yêu cầu trực tuyến</span>
+                <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 10px;" data-i18n="contact_form_title">Yêu Cầu Báo Giá & Tư Vấn</h3>
+                <p style="color: var(--uni-text-muted); font-size: 0.95rem; margin-bottom: 25px;" data-i18n="contact_form_desc">
+                    Điền thông tin hàng hóa của bạn vào biểu mẫu bên dưới. Chuyên viên xuất nhập khẩu của VANDAMAFRICA sẽ phản hồi trong vòng 30 phút.
+                </p>
+
+                <form onsubmit="event.preventDefault(); alert((window.i18nData && window.i18nData[document.documentElement.lang] && window.i18nData[document.documentElement.lang]['contact_form_alert']) || 'Cảm ơn bạn! Yêu cầu báo giá của bạn đã được gửi thành công. Chuyên viên VANDAMAFRICA sẽ liên hệ lại ngay.'); this.reset();">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--uni-navy); margin-bottom: 8px;" data-i18n="contact_form_name_lbl">Họ và Tên *</label>
+                            <input type="text" required placeholder="Nguyễn Văn A" data-i18n-ph="contact_form_name_ph" style="width: 100%; padding: 12px 16px; border: 1px solid var(--uni-border); border-radius: 8px; outline: none; font-size: 0.95rem;" />
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--uni-navy); margin-bottom: 8px;" data-i18n="contact_form_phone_lbl">Số Điện Thoại *</label>
+                            <input type="tel" required placeholder="0908 123 456" data-i18n-ph="contact_form_phone_ph" style="width: 100%; padding: 12px 16px; border: 1px solid var(--uni-border); border-radius: 8px; outline: none; font-size: 0.95rem;" />
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--uni-navy); margin-bottom: 8px;" data-i18n="contact_form_email_lbl">Email Doanh Nghiệp *</label>
+                            <input type="email" required placeholder="info@company.com" data-i18n-ph="contact_form_email_ph" style="width: 100%; padding: 12px 16px; border: 1px solid var(--uni-border); border-radius: 8px; outline: none; font-size: 0.95rem;" />
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--uni-navy); margin-bottom: 8px;" data-i18n="contact_form_service_lbl">Dịch Vụ Quan Tâm</label>
+                            <select style="width: 100%; padding: 12px 16px; border: 1px solid var(--uni-border); border-radius: 8px; outline: none; font-size: 0.95rem; background: #fff;">
+                                <option data-i18n="contact_form_opt1">Đại lý Thủ tục Hải quan</option>
+                                <option data-i18n="contact_form_opt2">Kho vận & Kho Ngoại quan</option>
+                                <option data-i18n="contact_form_opt3">Vận tải Nội địa (Trucking)</option>
+                                <option data-i18n="contact_form_opt4">Cước Tàu Biển Quốc tế</option>
+                                <option data-i18n="contact_form_opt5">Mua Nông sản & Cà phê Xuất khẩu</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--uni-navy); margin-bottom: 8px;" data-i18n="contact_form_details_lbl">Chi Tiết Hàng Hóa / Lộ Trình Vận Chuyển</label>
+                        <textarea rows="4" placeholder="Ví dụ: 2 container 40HQ cà phê hạt, tuyến Bảo Lộc đi Cát Lái xuất cảng Hamburg..." data-i18n-ph="contact_form_details_ph" style="width: 100%; padding: 12px 16px; border: 1px solid var(--uni-border); border-radius: 8px; outline: none; font-size: 0.95rem;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-read-more" style="background: var(--uni-orange); border: none; cursor: pointer; width: 100%; justify-content: center; font-size: 1rem; padding: 14px;">
+                        <i class="fa-solid fa-paper-plane me-2"></i> <span data-i18n="contact_form_submit">Gửi Yêu Cầu Báo Giá</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Right: Direct Contact Details -->
+            <div>
+                <span class="section-subtitle" data-i18n="contact_info_subtitle">Thông tin liên hệ trực tiếp</span>
+                <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 20px;" data-i18n="footer_company_name">CÔNG TY TNHH XUẤT NHẬP KHẨU VANDAMAFRICA</h3>
+                
+                <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px;">
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 45px; height: 45px; background: var(--uni-orange-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--uni-orange); font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <strong style="color: var(--uni-navy); display: block; margin-bottom: 4px;" data-i18n="footer_hq_title">Trụ sở chính (Lâm Đồng):</strong>
+                            <p style="color: var(--uni-text-muted); font-size: 0.95rem;" data-i18n="footer_hq_addr">82/10 Lê Thị Pha, Phường 1, Thành phố Bảo Lộc, Tỉnh Lâm Đồng, Việt Nam</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 45px; height: 45px; background: var(--uni-blue-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--uni-blue); font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <strong style="color: var(--uni-navy); display: block; margin-bottom: 4px;" data-i18n="contact_support_247">Tổng đài hỗ trợ 24/7:</strong>
+                            <p style="color: var(--uni-text-muted); font-size: 0.95rem;">+84 263 388 9988 / Hotline: 0908 123 456</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 45px; height: 45px; background: #ecfdf5; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #059669; font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong style="color: var(--uni-navy); display: block; margin-bottom: 4px;" data-i18n="contact_email_title">Email liên hệ:</strong>
+                            <p style="color: var(--uni-text-muted); font-size: 0.95rem;">contact@vandamafrica.com / sales@vandamafrica.com</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="width: 45px; height: 45px; background: #fef3c7; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #d97706; font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-barcode"></i>
+                        </div>
+                        <div>
+                            <strong style="color: var(--uni-navy); display: block; margin-bottom: 4px;" data-i18n="contact_tax_code">Mã số thuế:</strong>
+                            <p style="color: var(--uni-text-muted); font-size: 0.95rem;">5801509616</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map Preview -->
+                <div style="border-radius: 16px; overflow: hidden; border: 1px solid var(--uni-border); height: 260px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.9468962299863!2d107.8045!3d11.5463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3173f4e246995669%3A0xb2bb7ec6a6669911!2zTMOqIFRo4buLIFBoYSwgUGjGsOG7nW5nIDEsIELhuqNvIEzhu5ljLCBMw6JtIMSQ4buTbmc!5e0!3m2!1svi!2svn!4v1700000000000!5m2!1svi!2svn" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Multi-branch Directory (Uni Logistics Style) -->
+        <div>
+            <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 30px; text-align: center;" data-i18n="contact_branches_title">Mạng Lưới Chi Nhánh Vận Hành</h3>
+            <div class="branches-grid" style="color: var(--uni-navy);">
+                <div style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 14px; padding: 25px;">
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 10px;"><i class="fa-solid fa-building-columns" style="color: var(--uni-orange);"></i> <span data-i18n="footer_hq_title">Trụ sở Lâm Đồng:</span></h5>
+                    <p style="font-size: 0.85rem; color: var(--uni-text-muted); line-height: 1.6;" data-i18n="footer_hq_addr">82/10 Lê Thị Pha, P.1, TP. Bảo Lộc, Lâm Đồng</p>
+                    <p style="font-size: 0.85rem; color: var(--uni-orange); font-weight: 700; margin-top: 8px;"><i class="fa-solid fa-phone me-1"></i>+84 263 388 9988</p>
+                </div>
+                <div style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 14px; padding: 25px;">
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 10px;"><i class="fa-solid fa-city" style="color: var(--uni-orange);"></i> <span data-i18n="footer_hcm_title">Chi nhánh TP. Hồ Chí Minh:</span></h5>
+                    <p style="font-size: 0.85rem; color: var(--uni-text-muted); line-height: 1.6;" data-i18n="footer_hcm_addr">Tòa nhà Cảng Sài Gòn, Số 3 Nguyễn Tất Thành, Q.4, TP.HCM</p>
+                    <p style="font-size: 0.85rem; color: var(--uni-orange); font-weight: 700; margin-top: 8px;"><i class="fa-solid fa-phone me-1"></i>+84 28 3940 5566</p>
+                </div>
+                <div style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 14px; padding: 25px;">
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 10px;"><i class="fa-solid fa-warehouse" style="color: var(--uni-orange);"></i> <span data-i18n="footer_bd_title">Trung tâm Kho Bình Dương:</span></h5>
+                    <p style="font-size: 0.85rem; color: var(--uni-text-muted); line-height: 1.6;" data-i18n="footer_bd_addr">Cụm kho số 3, KCN Nam Tân Uyên, TP. Tân Uyên, Bình Dương</p>
+                    <p style="font-size: 0.85rem; color: var(--uni-orange); font-weight: 700; margin-top: 8px;"><i class="fa-solid fa-phone me-1"></i>+84 274 382 1199</p>
+                </div>
+                <div style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 14px; padding: 25px;">
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 10px;"><i class="fa-solid fa-ship" style="color: var(--uni-orange);"></i> <span data-i18n="footer_hp_title">Văn phòng Cảng Hải Phòng:</span></h5>
+                    <p style="font-size: 0.85rem; color: var(--uni-text-muted); line-height: 1.6;" data-i18n="footer_hp_addr">Tòa nhà TD Plaza, Lô 20A Lê Hồng Phong, Ngô Quyền, Hải Phòng</p>
+                    <p style="font-size: 0.85rem; color: var(--uni-orange); font-weight: 700; margin-top: 8px;"><i class="fa-solid fa-phone me-1"></i>+84 225 382 8822</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+</CompanyLayout>

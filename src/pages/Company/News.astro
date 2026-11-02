@@ -1,0 +1,107 @@
+---
+import CompanyLayout from "../../layouts/CompanyLayout.astro";
+---
+<CompanyLayout title="Tin Tức & Sự Kiện — VANDAMAFRICA LOGISTICS" currentPage="News">
+<!-- Subpage Hero -->
+<section class="subpage-hero">
+    <div class="hero-inner">
+        <h1 data-i18n="page_news_title">Tin Tức & Sự Kiện</h1>
+        <div class="subpage-breadcrumbs">
+            <a href="/Company" data-i18n="bc_home">Trang chủ</a>
+            <span>/</span>
+            <span style="color: #ffffff;" data-i18n="page_news_title">Tin tức</span>
+        </div>
+    </div>
+</section>
+
+<!-- News Listing -->
+<section class="uni-section" style="background: var(--uni-bg-light);">
+    <div class="section-container">
+        
+        <!-- Filter Tabs -->
+        <div style="display: flex; gap: 15px; margin-bottom: 40px; flex-wrap: wrap;">
+            <button style="background: var(--uni-orange); color: #fff; border: none; padding: 10px 24px; border-radius: 25px; font-weight: 700; cursor: pointer;" data-i18n="news_tab_all">Tất Cả</button>
+            <button style="background: #ffffff; color: var(--uni-navy); border: 1px solid var(--uni-border); padding: 10px 24px; border-radius: 25px; font-weight: 600; cursor: pointer;" data-i18n="news_tab_press">Góc Báo Chí</button>
+            <button style="background: #ffffff; color: var(--uni-navy); border: 1px solid var(--uni-border); padding: 10px 24px; border-radius: 25px; font-weight: 600; cursor: pointer;" data-i18n="news_tab_events">Sự Kiện Công Ty</button>
+            <button style="background: #ffffff; color: var(--uni-navy); border: 1px solid var(--uni-border); padding: 10px 24px; border-radius: 25px; font-weight: 600; cursor: pointer;" data-i18n="news_tab_market">Thị Trường & Xuất Khẩu</button>
+        </div>
+
+        <!-- News Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+            <article class="news-card">
+                <div class="news-thumb">
+                    <img src="/img/company/product-coffee.jpg" alt="Thị trường cà phê xuất khẩu" />
+                    <span class="news-date-badge"><i class="fa-regular fa-clock me-1"></i>23/10/2026</span>
+                </div>
+                <div class="news-body">
+                    <h5 data-i18n="news_card1_title">Cà Phê Lâm Đồng Đạt Kỷ Lục Giá Trị Xuất Khẩu Sang Thị Trường Châu Âu</h5>
+                    <p data-i18n="news_card1_desc">Các hợp đồng kỳ hạn Robusta và Arabica xuất xứ Bảo Lộc tiếp tục ghi nhận đà tăng trưởng ấn tượng trong quý vừa qua nhờ tiêu chuẩn chất lượng cao và quy trình chế biến khắt khe.</p>
+                    <a href="#" class="news-read-link"><span data-i18n="news_read_more">Chi tiết bài viết</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-thumb">
+                    <img src="/img/company/hero-banner.jpg" alt="Hải quan điện tử" />
+                    <span class="news-date-badge"><i class="fa-regular fa-clock me-1"></i>18/10/2026</span>
+                </div>
+                <div class="news-body">
+                    <h5 data-i18n="news_card2_title">Quy Trình Thông Quan Hải Quan Số Hóa Giúp Rút Ngắn 50% Thời Gian Lưu Bãi</h5>
+                    <p data-i18n="news_card2_desc">Ứng dụng công nghệ e-Logistics của VANDAMAFRICA giúp các chủ hàng theo dõi tờ khai, luồng tờ khai và lộ trình container theo thời gian thực mọi lúc mọi nơi.</p>
+                    <a href="#" class="news-read-link"><span data-i18n="news_read_more">Chi tiết bài viết</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-thumb">
+                    <img src="/img/company/about-company.jpg" alt="Hợp tác chiến lược" />
+                    <span class="news-date-badge"><i class="fa-regular fa-clock me-1"></i>12/10/2026</span>
+                </div>
+                <div class="news-body">
+                    <h5 data-i18n="news_card3_title">VANDAMAFRICA Ký Kết Hợp Tác Chiến Lược Cung Ứng Với Các Hãng Tàu Toàn Cầu</h5>
+                    <p data-i18n="news_card3_desc">Đảm bảo nguồn cung vỏ container rỗng và giữ bình ổn giá cước vận tải biển cho các đối tác xuất khẩu nông sản chủ lực trong đợt cao điểm cuối năm.</p>
+                    <a href="#" class="news-read-link"><span data-i18n="news_read_more">Chi tiết bài viết</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-thumb">
+                    <img src="/img/company/product-household.jpg" alt="Logistics xanh" />
+                    <span class="news-date-badge"><i class="fa-regular fa-clock me-1"></i>05/10/2026</span>
+                </div>
+                <div class="news-body">
+                    <h5 data-i18n="news_card4_title">Xu Hướng Logistics Xanh & Kho Bãi Giảm Phát Thải Carbon Năm 2026</h5>
+                    <p data-i18n="news_card4_desc">Triển khai hệ thống điện mặt trời áp mái tại hệ thống kho ngoại quan và sử dụng xe nâng điện hiện đại thân thiện môi trường theo xu hướng Net-Zero toàn cầu.</p>
+                    <a href="#" class="news-read-link"><span data-i18n="news_read_more">Chi tiết bài viết</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-thumb">
+                    <img src="/img/company/product-agriculture.jpg" alt="Nông sản xuất khẩu" />
+                    <span class="news-date-badge"><i class="fa-regular fa-clock me-1"></i>28/09/2026</span>
+                </div>
+                <div class="news-body">
+                    <h5 data-i18n="news_card5_title">Thủ Tục Kiểm Dịch Thực Vật Nhanh Gọn Cho Nông Sản Xuất Khẩu Chính Ngạch</h5>
+                    <p data-i18n="news_card5_desc">Hướng dẫn chi tiết quy trình lấy mẫu, kiểm tra dư lượng thuốc bảo vệ thực vật và cấp chứng thư kiểm dịch nhanh cho hoa quả tươi và nông sản sấy.</p>
+                    <a href="#" class="news-read-link"><span data-i18n="news_read_more">Chi tiết bài viết</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-thumb">
+                    <img src="/img/company/product-electronics.jpg" alt="Thiết bị và linh kiện" />
+                    <span class="news-date-badge"><i class="fa-regular fa-clock me-1"></i>15/09/2026</span>
+                </div>
+                <div class="news-body">
+                    <h5 data-i18n="news_card6_title">Giải Pháp Vận Chuyển Đảm Bảo Cho Linh Kiện Công Nghệ & Thiết Bị Gia Dụng</h5>
+                    <p data-i18n="news_card6_desc">Dịch vụ bao gói chống sốc chuyên dụng và giải pháp container bảo ôn giúp giảm thiểu tối đa rủi ro hư hỏng hàng điện tử nhạy cảm.</p>
+                    <a href="#" class="news-read-link"><span data-i18n="news_read_more">Chi tiết bài viết</span> <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+</CompanyLayout>

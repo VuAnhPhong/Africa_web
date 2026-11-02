@@ -1,0 +1,566 @@
+---
+import CompanyLayout from "../../layouts/CompanyLayout.astro";
+---
+<CompanyLayout title="Trang Chủ - VANDAMAFRICA LOGISTICS & EXPORT" currentPage="Index">
+<!-- ===== VERTICAL DOT NAVIGATION (Uni Logistics Right Nav) ===== -->
+<nav id="cd-vertical-nav" class="cd-vertical-nav">
+    <ul>
+        <li class="active">
+            <a href="#section1">
+                <span class="cd-label" data-i18n="nav_dot_intro">Intro</span>
+                <span class="cd-dot"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#wrap_about">
+                <span class="cd-label" data-i18n="nav_dot_about">Về VANDAMAFRICA</span>
+                <span class="cd-dot"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#wrap_history">
+                <span class="cd-label" data-i18n="nav_dot_history">Lịch sử phát triển</span>
+                <span class="cd-dot"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#wrap_services">
+                <span class="cd-label" data-i18n="nav_dot_services">Dịch vụ cốt lõi</span>
+                <span class="cd-dot"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#wrap_news_events">
+                <span class="cd-label" data-i18n="nav_dot_news">Tin tức - Sự kiện</span>
+                <span class="cd-dot"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#wrap_clients">
+                <span class="cd-label" data-i18n="nav_dot_clients">Khách hàng & Đối tác</span>
+                <span class="cd-dot"></span>
+            </a>
+        </li>
+        <li>
+            <a href="#wrap_footer">
+                <span class="cd-label" data-i18n="nav_dot_contact">Liên hệ</span>
+                <span class="cd-dot"></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- ==========================================================================
+     SECTION 1: HERO PARALLAX & SKEWED SERVICES CARDS
+     ========================================================================== -->
+<section id="section1" class="uni-hero">
+    <!-- Parallax Sky Layers -->
+    <div class="hero-sky-layer">
+        <div class="sky-cloud cloud-1"></div>
+        <div class="sky-cloud cloud-2"></div>
+        <svg class="sky-plane" viewBox="0 0 512 512" fill="#ffffff">
+            <path d="M496 16L15.9 249.2c-23 12.3-21.6 46.2 2.3 56.6l103.5 45.4 33.4 125.7c3.9 14.8 19.3 22.8 33.7 17.5l67.2-24.9 92.5 73.1c16.3 12.9 40.2 5.1 46.1-15.1L510.6 44.9C514.8 30.1 506.7 14.3 496 16zM384 128L183.9 308.2l-64.8-28.4L384 128z"/>
+        </svg>
+    </div>
+
+    <!-- Top Headline -->
+    <div class="hero-headline-wrap">
+        <div class="hero-pill-badge">
+            <i class="fa-solid fa-anchor"></i>
+            <span data-i18n="hero_badge">Giải Pháp Xuất Nhập Khẩu & Logistics Toàn Diện</span>
+        </div>
+        <h1 class="hero-main-title">
+            <span data-i18n="hero_title">Vươn Tầm Thế Giới Cùng</span> <span class="text-gold">VANDAMAFRICA</span>
+        </h1>
+        <p class="hero-lead-text" data-i18n="hero_lead">
+            Tiên phong trong lĩnh vực thủ tục hải quan, vận tải đa phương thức, kho ngoại quan và xuất khẩu nông sản chất lượng cao từ cao nguyên Lâm Đồng đến thị trường quốc tế.
+        </p>
+        <div class="hero-cta-group">
+            <a href="#wrap_services" class="btn-hero-solid">
+                <i class="fa-solid fa-boxes-stacked"></i> <span data-i18n="hero_btn_explore">Khám Phá Dịch Vụ</span>
+            </a>
+            <a href="/Company/Contact" class="btn-hero-glass">
+                <i class="fa-solid fa-phone"></i> <span data-i18n="hero_btn_quote">Yêu Cầu Báo Giá</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Diagonal Skewed Services Slider (UniLogistics Signature) -->
+    <div class="hero-skew-slider-wrap">
+        <div class="skew-slider-header">
+            <div class="slider-dynamic-text">
+                <h4 id="skewSliderTitle" data-i18n="skew_header_title">Dịch vụ Logistics & Xuất Nhập Khẩu</h4>
+                <p id="skewSliderDesc" data-i18n="skew_header_desc">Cung cấp các giải pháp xuất nhập khẩu chuyên nghiệp đáp ứng nhu cầu khắt khe của từng doanh nghiệp</p>
+            </div>
+            <a href="/Company/Services" class="btn-read-more" style="background: rgba(255,255,255,0.15);">
+                <span data-i18n="skew_view_all">Xem tất cả dịch vụ</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="skew-gallery-row">
+            <!-- Skew Card 1: Customs -->
+            <div class="skew-card" 
+                 data-title="Đại lý Thủ tục Hải quan" 
+                 data-desc="Đơn vị đại lý hải quan uy tín, hoàn tất thủ tục thông quan nhanh chóng, chính xác và tối ưu chi phí"
+                 data-title-en="Licensed Customs Brokerage"
+                 data-desc-en="Reputable licensed customs brokerage, completing clearance formalities quickly, accurately, and cost-effectively">
+                <div class="skew-inner">
+                    <img src="/img/company/hero-banner.jpg" alt="Đại lý thủ tục hải quan" />
+                    <div class="skew-overlay">
+                        <span class="card-cat-badge" data-i18n="skew_badge_customs">Hải quan</span>
+                        <h4 class="card-title" data-i18n="skew_title_customs">Đại Lý Thủ Tục Hải Quan</h4>
+                        <p class="card-summary" data-i18n="skew_desc_customs">Thông quan hàng hóa nhanh gọn, tư vấn chính sách thuế và chứng nhận xuất xứ CO chính xác.</p>
+                        <a href="/Company/Services#customs" class="card-explore-btn">
+                            <span data-i18n="skew_btn_detail">Chi tiết</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skew Card 2: Warehousing -->
+            <div class="skew-card" 
+                 data-title="Kho vận & Hệ thống Kho Ngoại quan" 
+                 data-desc="Hệ thống kho bãi hiện đại, tiêu chuẩn lưu trữ quốc tế, phân phối hàng hóa nhanh chóng"
+                 data-title-en="Warehousing & Bonded Logistics"
+                 data-desc-en="Modern warehousing facilities, international storage standards, and accelerated merchandise distribution">
+                <div class="skew-inner">
+                    <img src="/img/company/product-household.jpg" alt="Kho vận và phân phối" />
+                    <div class="skew-overlay">
+                        <span class="card-cat-badge" data-i18n="skew_badge_warehouse">Kho bãi</span>
+                        <h4 class="card-title" data-i18n="skew_title_warehouse">Kho Vận & Kho Ngoại Quan</h4>
+                        <p class="card-summary" data-i18n="skew_desc_warehouse">Quản lý kho thông minh WMS, diện tích lưu trữ hơn 200.000m² tại các vùng kinh tế trọng điểm.</p>
+                        <a href="/Company/Services#warehouse" class="card-explore-btn">
+                            <span data-i18n="skew_btn_detail">Chi tiết</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skew Card 3: Freight Transport -->
+            <div class="skew-card" 
+                 data-title="Vận tải Nội địa & Đa phương thức" 
+                 data-desc="Đội xe đầu kéo container và xe tải phủ sóng toàn quốc, vận tải an toàn đúng hạn"
+                 data-title-en="Multimodal Inland Trucking"
+                 data-desc-en="Nationwide fleet of prime movers and heavy trucks, providing punctual, safe haulage">
+                <div class="skew-inner">
+                    <img src="/img/company/about-company.jpg" alt="Vận tải hàng hóa" />
+                    <div class="skew-overlay">
+                        <span class="card-cat-badge" data-i18n="skew_badge_transport">Vận tải</span>
+                        <h4 class="card-title" data-i18n="skew_title_transport">Vận Tải Nội Địa Đa Vùng</h4>
+                        <p class="card-summary" data-i18n="skew_desc_transport">Mạng lưới vận chuyển kết nối các cảng biển lớn, kho bãi và nhà máy sản xuất liên tỉnh.</p>
+                        <a href="/Company/Services#inland" class="card-explore-btn">
+                            <span data-i18n="skew_btn_detail">Chi tiết</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skew Card 4: Agri Export -->
+            <div class="skew-card" 
+                 data-title="Xuất khẩu Cà phê & Nông sản Việt" 
+                 data-desc="Cung ứng và xuất khẩu cà phê Robusta/Arabica Lâm Đồng chất lượng cao ra thị trường quốc tế"
+                 data-title-en="Coffee & Agricultural Exports"
+                 data-desc-en="Supplying and exporting premium Lam Dong Robusta/Arabica coffee to international markets">
+                <div class="skew-inner">
+                    <img src="/img/company/product-coffee.jpg" alt="Cà phê xuất khẩu" />
+                    <div class="skew-overlay">
+                        <span class="card-cat-badge" data-i18n="skew_badge_agri">Nông sản</span>
+                        <h4 class="card-title" data-i18n="skew_title_agri">Xuất Khẩu Cà Phê & Nông Sản</h4>
+                        <p class="card-summary" data-i18n="skew_desc_agri">Đưa nông sản tinh túy cao nguyên Việt Nam vươn xa tới các đối tác Á, Âu, Mỹ và Châu Phi.</p>
+                        <a href="/Company/Services#agri" class="card-explore-btn">
+                            <span data-i18n="skew_btn_detail">Chi tiết</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skew Card 5: International Freight -->
+            <div class="skew-card" 
+                 data-title="Vận tải Đường biển & Hàng không Quốc tế" 
+                 data-desc="Đối tác của hơn 20 hãng tàu xuyên đại dương và 15 hãng hàng không quốc tế"
+                 data-title-en="Ocean & Air Freight Forwarding"
+                 data-desc-en="Alliances with 20+ ocean carriers and 15+ international air cargo lines">
+                <div class="skew-inner">
+                    <img src="/img/company/product-electronics.jpg" alt="Vận chuyển quốc tế" />
+                    <div class="skew-overlay">
+                        <span class="card-cat-badge" data-i18n="skew_badge_intl">Quốc tế</span>
+                        <h4 class="card-title" data-i18n="skew_title_intl">Vận Tải Biển & Hàng Không</h4>
+                        <p class="card-summary" data-i18n="skew_desc_intl">Tuyến vận chuyển linh hoạt, giá cước cạnh tranh và cam kết bảo hiểm hàng hóa trọn vẹn.</p>
+                        <a href="/Company/Services#international" class="card-explore-btn">
+                            <span data-i18n="skew_btn_detail">Chi tiết</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 2: ABOUT & COUNTER NUMBERS (Uni Logistics Style)
+     ========================================================================== -->
+<section id="wrap_about" class="uni-section">
+    <div class="section-container">
+        <div class="about-grid-layout">
+            <!-- Left Column: About Story -->
+            <div class="about-text-col">
+                <span class="section-subtitle" data-i18n="about_teaser_subtitle">Về chúng tôi</span>
+                <h3 data-i18n="footer_company_name">CÔNG TY TNHH XUẤT NHẬP KHẨU VANDAMAFRICA</h3>
+                <div class="quote-tagline" data-i18n="about_teaser_quote">
+                    “Vì lợi ích bền vững của khách hàng và uy tín nông sản Việt”
+                </div>
+                <p data-i18n="about_teaser_p1">
+                    Được thành lập và phát triển tại vùng đất màu mỡ Lâm Đồng, <strong>VANDAMAFRICA</strong> tự hào là đối tác tin cậy hàng đầu cung cấp chuỗi dịch vụ logistics trọn gói và xuất nhập khẩu hàng hóa. Chúng tôi sở hữu nền tảng quản trị công nghệ tiên tiến, quy trình chuẩn hóa và mạng lưới liên kết chặt chẽ với các cảng biển và hãng vận tải quốc tế.
+                </p>
+                <p data-i18n="about_teaser_p2">
+                    Với tôn chỉ <em>“Trung thực — Kỷ luật — Uy tín”</em>, VANDAMAFRICA không ngừng hoàn thiện chuỗi cung ứng khép kín, từ hỗ trợ thủ tục thông quan đến bảo quản kho bãi và giao nhận tận tay đối tác toàn cầu.
+                </p>
+                <a href="/Company/About" class="btn-read-more">
+                    <span data-i18n="about_teaser_btn">Tìm hiểu thêm về VANDAMAFRICA</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Right Column: Animated Stats Box -->
+            <div class="about-stats-box">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-num-row">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <div class="stat-title" data-i18n="stat_title_years">Năm kinh nghiệm uy tín trong ngành</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num-row">
+                            <span class="stat-number" data-target="350">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <div class="stat-title" data-i18n="stat_title_team">Nhân sự chuyên môn cao & tận tâm</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num-row">
+                            <span class="stat-number" data-target="50000">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <div class="stat-title" data-i18n="stat_title_customs">Tờ khai hải quan thông quan/năm</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num-row">
+                            <span class="stat-number" data-target="80000">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <div class="stat-title" data-i18n="stat_title_teus">TEUs hàng hóa vận chuyển/năm</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num-row">
+                            <span class="stat-number" data-target="200000">0</span>
+                            <span class="stat-suffix">m²</span>
+                        </div>
+                        <div class="stat-title" data-i18n="stat_title_warehouse">Diện tích kho bãi & ngoại quan</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num-row">
+                            <span class="stat-number" data-target="250">0</span>
+                            <span class="stat-suffix">+</span>
+                        </div>
+                        <div class="stat-title" data-i18n="stat_title_clients">Đối tác khách hàng doanh nghiệp</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 3: INTERACTIVE HORIZONTAL TIMELINE
+     ========================================================================== -->
+<section id="wrap_history" class="uni-history-section">
+    <div class="section-container">
+        <div class="section-title-wrap text-center" style="text-align: center;">
+            <span class="section-subtitle" data-i18n="timeline_subtitle">Chặng đường phát triển</span>
+            <h2 class="section-title" data-i18n="timeline_title">Lịch Sử Hình Thành & Bứt Phá</h2>
+            <p class="section-desc" style="margin: 10px auto; color: #cbd5e1;" data-i18n="timeline_desc">
+                Hơn một thập kỷ xây dựng uy tín thương hiệu logistics & xuất nhập khẩu VANDAMAFRICA
+            </p>
+        </div>
+
+        <!-- Timeline Years Track -->
+        <div class="timeline-years-bar">
+            <div class="year-node active" data-year="2026">2026</div>
+            <div class="year-node" data-year="2024">2024</div>
+            <div class="year-node" data-year="2022">2022</div>
+            <div class="year-node" data-year="2020">2020</div>
+            <div class="year-node" data-year="2018">2018</div>
+            <div class="year-node" data-year="2015">2015</div>
+        </div>
+
+        <!-- Timeline Event Detail Card -->
+        <div class="timeline-display-card">
+            <!-- 2026 -->
+            <div class="timeline-event-item active" data-year="2026">
+                <h4 data-i18n="timeline_card_2026_title">Năm 2026 — Chuyển Đổi Số Toàn Diện & Mở Rộng Thị Trường Quốc Tế</h4>
+                <p data-i18n="timeline_card_2026_desc">
+                    VANDAMAFRICA chính thức triển khai hệ sinh thái số hóa quản trị ERP & Dashboard vận hành thời gian thực. Mở rộng chuỗi cung ứng xuất khẩu nông sản cao cấp Lâm Đồng sang thị trường Trung Đông và Châu Phi, nâng tổng sản lượng xuất khẩu nông sản đạt mốc kỷ lục.
+                </p>
+            </div>
+            <!-- 2024 -->
+            <div class="timeline-event-item" data-year="2024">
+                <h4 data-i18n="timeline_card_2024_title">Năm 2024 — Nâng Cấp Hệ Thống Kho Ngoại Quan & Đội Xe Container</h4>
+                <p data-i18n="timeline_card_2024_desc">
+                    Khánh thành kho ngoại quan công nghệ cao tại KCN Tân Uyên với sức chứa hơn 50.000 pallet, đồng thời đầu tư thêm 30 xe đầu kéo chuyên dụng hiện đại nhằm đáp ứng nhu cầu giao thương tăng trưởng mạnh mẽ của các doanh nghiệp FDI.
+                </p>
+            </div>
+            <!-- 2022 -->
+            <div class="timeline-event-item" data-year="2022">
+                <h4 data-i18n="timeline_card_2022_title">Năm 2022 — Mở Rộng Mạng Lưới Chi Nhánh TP.HCM & Hải Phòng</h4>
+                <p data-i18n="timeline_card_2022_desc">
+                    Thành lập các văn phòng chi nhánh chiến lược tại Cảng Sài Gòn (TP.HCM) và Cảng Hải Phòng, tạo hành lang vận chuyển thông suốt Bắc — Nam và kết nối nhanh nhất tới các tuyến hàng hải xuyên Thái Bình Dương.
+                </p>
+            </div>
+            <!-- 2020 -->
+            <div class="timeline-event-item" data-year="2020">
+                <h4 data-i18n="timeline_card_2020_title">Năm 2020 — Chuẩn Hóa Đại Lý Thủ Tục Hải Quan 3PL</h4>
+                <p data-i18n="timeline_card_2020_desc">
+                    Được Tổng cục Hải quan chứng nhận đại lý thủ tục hải quan ưu tiên, hỗ trợ hàng trăm doanh nghiệp xuất nhập khẩu thông quan thông suốt ngay cả trong giai đoạn gián đoạn chuỗi cung ứng toàn cầu.
+                </p>
+            </div>
+            <!-- 2018 -->
+            <div class="timeline-event-item" data-year="2018">
+                <h4 data-i18n="timeline_card_2018_title">Năm 2018 — Tiên Phong Xuất Khẩu Cà Phê Lâm Đồng Chất Lượng Cao</h4>
+                <p data-i18n="timeline_card_2018_desc">
+                    Xây dựng vùng nguyên liệu cà phê Robusta và Arabica bền vững tại Bảo Lộc — Di Linh, xuất khẩu lô hàng thương phẩm tiêu chuẩn quốc tế đầu tiên sang các thị trường khó tính tại Đông Âu và Bắc Mỹ.
+                </p>
+            </div>
+            <!-- 2015 -->
+            <div class="timeline-event-item" data-year="2015">
+                <h4 data-i18n="timeline_card_2015_title">Năm 2015 — Khởi Đầu Vững Chắc & Định Hình Sứ Mệnh</h4>
+                <p data-i18n="timeline_card_2015_desc">
+                    CÔNG TY TNHH XUẤT NHẬP KHẨU VANDAMAFRICA chính thức được thành lập với mục tiêu trở thành cầu nối vững chắc đưa các mặt hàng giá trị của Việt Nam vươn ra biển lớn bằng dịch vụ logistics chuyên nghiệp, tận tâm.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 4: CORE SERVICES & CAPABILITY
+     ========================================================================== -->
+<section id="wrap_services" class="uni-section" style="background: #ffffff;">
+    <div class="section-container">
+        <div class="section-title-wrap">
+            <span class="section-subtitle" data-i18n="services_sec_subtitle">Dịch vụ của chúng tôi</span>
+            <h2 class="section-title" data-i18n="services_sec_title">Giải Pháp Logistics Khép Kín & Hiệu Quả</h2>
+            <p class="section-desc" data-i18n="services_sec_desc">
+                Cung cấp các giải pháp vận chuyển, kho bãi và thủ tục hải quan may đo theo yêu cầu của từng ngành hàng.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+            <!-- Service 1 -->
+            <div style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 16px; padding: 35px; transition: var(--uni-transition);" onmouseover="this.style.borderColor='var(--uni-orange)'; this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='var(--uni-border)'; this.style.transform='translateY(0)'">
+                <div style="width: 60px; height: 60px; background: var(--uni-blue-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--uni-blue); margin-bottom: 20px;">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 12px;" data-i18n="srv_card1_title">Đại Lý Thủ Tục Hải Quan</h4>
+                <p style="font-size: 0.95rem; color: var(--uni-text-muted); line-height: 1.7; margin-bottom: 20px;" data-i18n="srv_card1_desc">
+                    Khai báo tờ khai hải quan điện tử qua hệ thống VNACCS/VCIS, xin giấy phép xuất nhập khẩu chuyên ngành, kiểm tra chất lượng và hoàn tất C/O form các loại.
+                </p>
+                <a href="/Company/Services#customs" style="color: var(--uni-orange); font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px;">
+                    <span data-i18n="srv_card_view">Xem chi tiết</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Service 2 -->
+            <div style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 16px; padding: 35px; transition: var(--uni-transition);" onmouseover="this.style.borderColor='var(--uni-orange)'; this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='var(--uni-border)'; this.style.transform='translateY(0)'">
+                <div style="width: 60px; height: 60px; background: var(--uni-orange-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--uni-orange); margin-bottom: 20px;">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 12px;" data-i18n="srv_card2_title">Kho Vận & Kho Ngoại Quan</h4>
+                <p style="font-size: 0.95rem; color: var(--uni-text-muted); line-height: 1.7; margin-bottom: 20px;" data-i18n="srv_card2_desc">
+                    Hệ thống kho ngoại quan đạt chuẩn GSP, kiểm soát nhiệt độ và độ ẩm nghiêm ngặt, dịch vụ đóng gói, dán nhãn, phân loại và phân phối hàng hóa nhanh.
+                </p>
+                <a href="/Company/Services#warehouse" style="color: var(--uni-orange); font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px;">
+                    <span data-i18n="srv_card_view">Xem chi tiết</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Service 3 -->
+            <div style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 16px; padding: 35px; transition: var(--uni-transition);" onmouseover="this.style.borderColor='var(--uni-orange)'; this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='var(--uni-border)'; this.style.transform='translateY(0)'">
+                <div style="width: 60px; height: 60px; background: #ecfdf5; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #059669; margin-bottom: 20px;">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 12px;" data-i18n="srv_card3_title">Vận Tải Nội Địa & Đa Phương Thức</h4>
+                <p style="font-size: 0.95rem; color: var(--uni-text-muted); line-height: 1.7; margin-bottom: 20px;" data-i18n="srv_card3_desc">
+                    Đội ngũ hơn 60 xe đầu kéo và xe tải container chuyên tuyến Tây Nguyên — TP.HCM — Bình Dương — Hải Phòng, đảm bảo hành trình an toàn với định vị GPS 24/7.
+                </p>
+                <a href="/Company/Services#inland" style="color: var(--uni-orange); font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px;">
+                    <span data-i18n="srv_card_view">Xem chi tiết</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Service 4 -->
+            <div style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 16px; padding: 35px; transition: var(--uni-transition);" onmouseover="this.style.borderColor='var(--uni-orange)'; this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='var(--uni-border)'; this.style.transform='translateY(0)'">
+                <div style="width: 60px; height: 60px; background: #e0f2fe; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #0284c7; margin-bottom: 20px;">
+                    <i class="fa-solid fa-ship"></i>
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 12px;" data-i18n="srv_card4_title">Cước Tàu Biển & Hàng Không Quốc Tế</h4>
+                <p style="font-size: 0.95rem; color: var(--uni-text-muted); line-height: 1.7; margin-bottom: 20px;" data-i18n="srv_card4_desc">
+                    Hợp đồng trực tiếp với các hãng tàu hàng đầu (Maersk, ONE, Cosco, Evergreen...) cam kết chỗ đi ngay cả trong mùa cao điểm, lịch trình ổn định và cước phí cạnh tranh.
+                </p>
+                <a href="/Company/Services#international" style="color: var(--uni-orange); font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px;">
+                    <span data-i18n="srv_card_view">Xem chi tiết</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Service 5 -->
+            <div style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 16px; padding: 35px; transition: var(--uni-transition);" onmouseover="this.style.borderColor='var(--uni-orange)'; this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='var(--uni-border)'; this.style.transform='translateY(0)'">
+                <div style="width: 60px; height: 60px; background: #fef3c7; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #d97706; margin-bottom: 20px;">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 12px;" data-i18n="srv_card5_title">Xuất Khẩu Nông Sản & Cà Phê</h4>
+                <p style="font-size: 0.95rem; color: var(--uni-text-muted); line-height: 1.7; margin-bottom: 20px;" data-i18n="srv_card5_desc">
+                    Cung ứng cà phê nhân Robusta/Arabica Lâm Đồng, sầu riêng, hạt tiêu, nông sản sấy thăng hoa xuất khẩu với đầy đủ chứng nhận kiểm dịch thực vật quốc tế.
+                </p>
+                <a href="/Company/Services#agri" style="color: var(--uni-orange); font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px;">
+                    <span data-i18n="srv_card_view">Xem chi tiết</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Service 6 -->
+            <div style="background: var(--uni-bg-light); border: 1px solid var(--uni-border); border-radius: 16px; padding: 35px; transition: var(--uni-transition);" onmouseover="this.style.borderColor='var(--uni-orange)'; this.style.transform='translateY(-6px)'" onmouseout="this.style.borderColor='var(--uni-border)'; this.style.transform='translateY(0)'">
+                <div style="width: 60px; height: 60px; background: #fae8ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #a855f7; margin-bottom: 20px;">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--uni-navy); margin-bottom: 12px;" data-i18n="srv_card6_title">Tư Vấn Thương Mại & Cung Ứng Quốc Tế</h4>
+                <p style="font-size: 0.95rem; color: var(--uni-text-muted); line-height: 1.7; margin-bottom: 20px;" data-i18n="srv_card6_desc">
+                    Tư vấn đàm phán hợp đồng ngoại thương Incoterms 2020, kiểm tra năng lực nhà cung cấp nước ngoài, thanh toán quốc tế L/C an toàn và hạn chế rủi ro tỷ giá.
+                </p>
+                <a href="/Company/Contact" style="color: var(--uni-orange); font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px;">
+                    <span data-i18n="srv_card_consult">Nhận tư vấn ngay</span> <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 5: NEWS & COMPANY PROFILE (Uni Logistics Style)
+     ========================================================================== -->
+<section id="wrap_news_events" class="uni-section" style="background: var(--uni-bg-light);">
+    <div class="section-container">
+        <div class="section-title-wrap">
+            <span class="section-subtitle" data-i18n="news_sec_subtitle">Góc thông tin</span>
+            <h2 class="section-title" data-i18n="news_sec_title">Tin Tức & Sự Kiện VANDAMAFRICA</h2>
+            <p class="section-desc" data-i18n="news_sec_desc">Cập nhật xu hướng thị trường xuất nhập khẩu, chính sách hải quan mới và các sự kiện nổi bật của công ty.</p>
+        </div>
+
+        <div class="news-events-grid">
+            <!-- Left: Articles List -->
+            <div class="news-articles-row">
+                <article class="news-card">
+                    <div class="news-thumb">
+                        <img src="/img/company/product-coffee.jpg" alt="Thị trường cà phê xuất khẩu" />
+                        <span class="news-date-badge"><i class="fa-regular fa-clock me-1"></i>23/10/2026</span>
+                    </div>
+                    <div class="news-body">
+                        <h5 data-i18n="news_card1_title">Cà Phê Lâm Đồng Đạt Kỷ Lục Giá Trị Xuất Khẩu Sang Thị Trường Châu Âu</h5>
+                        <p data-i18n="news_card1_desc">Các hợp đồng kỳ hạn Robusta và Arabica xuất xứ Bảo Lộc tiếp tục ghi nhận đà tăng trưởng ấn tượng trong quý vừa qua nhờ tiêu chuẩn chất lượng cao.</p>
+                        <a href="/Company/News" class="news-read-link"><span data-i18n="news_read_more">Đọc bài viết</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-thumb">
+                        <img src="/img/company/hero-banner.jpg" alt="Hải quan điện tử" />
+                        <span class="news-date-badge"><i class="fa-regular fa-clock me-1"></i>18/10/2026</span>
+                    </div>
+                    <div class="news-body">
+                        <h5 data-i18n="news_card2_title">Quy Trình Thông Quan Hải Quan Số Hóa Giúp Rút Ngắn 50% Thời Gian Lưu Bãi</h5>
+                        <p data-i18n="news_card2_desc">Ứng dụng công nghệ e-Logistics của VANDAMAFRICA giúp các chủ hàng theo dõi tờ khai và lộ trình container theo thời gian thực.</p>
+                        <a href="/Company/News" class="news-read-link"><span data-i18n="news_read_more">Đọc bài viết</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-thumb">
+                        <img src="/img/company/about-company.jpg" alt="Hợp tác chiến lược" />
+                        <span class="news-date-badge"><i class="fa-regular fa-clock me-1"></i>12/10/2026</span>
+                    </div>
+                    <div class="news-body">
+                        <h5 data-i18n="news_card3_title">VANDAMAFRICA Ký Kết Hợp Tác Chiến Lược Cung Ứng Với Các Hãng Tàu Toàn Cầu</h5>
+                        <p data-i18n="news_card3_desc">Đảm bảo nguồn cung vỏ container rỗng và giữ bình ổn giá cước vận tải biển cho các đối tác xuất khẩu nông sản chủ lực.</p>
+                        <a href="/Company/News" class="news-read-link"><span data-i18n="news_read_more">Đọc bài viết</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-thumb">
+                        <img src="/img/company/product-household.jpg" alt="Logistics xanh" />
+                        <span class="news-date-badge"><i class="fa-regular fa-clock me-1"></i>05/10/2026</span>
+                    </div>
+                    <div class="news-body">
+                        <h5 data-i18n="news_card4_title">Xu Hướng Logistics Xanh & Kho Bãi Giảm Phát Thải Carbon Năm 2026</h5>
+                        <p data-i18n="news_card4_desc">Triển khai hệ thống điện mặt trời áp mái tại hệ thống kho ngoại quan và sử dụng xe nâng điện hiện đại thân thiện môi trường.</p>
+                        <a href="/Company/News" class="news-read-link"><span data-i18n="news_read_more">Đọc bài viết</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Right: Company Profile Download Banner (Uni Logistics Signature) -->
+            <div class="profile-banner-card">
+                <div>
+                    <div class="profile-icon">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <h4 data-i18n="profile_card_title">Hồ Sơ Năng Lực Công Ty</h4>
+                    <p data-i18n="profile_card_desc">
+                        Xem và tải về cuốn Brochure giới thiệu tổng thể năng lực pháp lý, cơ sở kho bãi, đội ngũ nhân sự và bảng giá tham khảo của VANDAMAFRICA IMPORT EXPORT CO., LTD.
+                    </p>
+                </div>
+                <div>
+                    <a href="/Company/Contact" class="btn-download-profile" style="width: 100%;">
+                        <i class="fa-solid fa-cloud-arrow-down"></i> <span data-i18n="profile_card_btn">Tải Hồ Sơ Năng Lực (PDF)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 6: CLIENTS & PARTNERS
+     ========================================================================== -->
+<section id="wrap_clients" class="uni-section uni-clients-section">
+    <div class="section-container">
+        <div class="clients-grid-wrap">
+            <!-- Left: Logo Grid -->
+            <div>
+                <div class="partners-logo-grid">
+                    <div class="partner-box"><span>MAERSK</span></div>
+                    <div class="partner-box"><span>COSCO</span></div>
+                    <div class="partner-box"><span>ONE LINE</span></div>
+                    <div class="partner-box"><span>EVERGREEN</span></div>
+                    <div class="partner-box"><span>TÂN CẢNG</span></div>
+                    <div class="partner-box"><span>VINAMILK</span></div>
+                    <div class="partner-box"><span>TRUNG NGUYÊN</span></div>
+                    <div class="partner-box"><span>CẢNG SÀI GÒN</span></div>
+                </div>
+            </div>
+
+            <!-- Right: Trust Commitment Card -->
+            <div class="clients-trust-block">
+                <h3 data-i18n="clients_trust_title">Khách Hàng Của Chúng Tôi</h3>
+                <p data-i18n="clients_trust_desc">
+                    Với hơn <strong>250+ doanh nghiệp xuất nhập khẩu</strong> tin tưởng đồng hành, VANDAMAFRICA cam kết mang lại giải pháp chuỗi cung ứng an toàn, tiết kiệm chi phí và tối đa hóa lợi ích cho quý đối tác.
+                </p>
+                <div class="trust-badge-row">
+                    <div class="trust-num">250+</div>
+                    <div class="trust-text" data-i18n="clients_trust_badge">Doanh Nghiệp & Tập Đoàn Lớn Đồng Hành</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</CompanyLayout>
