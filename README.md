@@ -1,67 +1,126 @@
-# Africa — Website Astro cho Netlify
+# Africa Web — Website giới thiệu VANDAMAFRICA
 
-Website chuyển từ Razor sang **Astro**, xuất HTML tĩnh. Giữ sáu trang, layout, CSS, JavaScript, ảnh và chuyển ngôn ngữ VN/EN. Không cần .NET hoặc database.
+Website giới thiệu doanh nghiệp VANDAMAFRICA, cung cấp thông tin về công ty, lịch sử phát triển, dịch vụ logistics và xuất nhập khẩu, tin tức và thông tin liên hệ.
+
+Website sử dụng **Astro**, HTML, CSS và JavaScript, hỗ trợ tiếng Việt/tiếng Anh và xuất các trang HTML tĩnh để triển khai trên Netlify.
+
+## Các trang chính
+
+| Trang | Đường dẫn |
+|---|---|
+| Trang chủ | `/` hoặc `/Company/` |
+| Giới thiệu | `/Company/About/` |
+| Lịch sử phát triển | `/Company/History/` |
+| Dịch vụ | `/Company/Services/` |
+| Tin tức | `/Company/News/` |
+| Liên hệ | `/Company/Contact/` |
+
+## Yêu cầu
+
+- Node.js **24.19.0**, thống nhất với cấu hình Netlify.
+- npm đi kèm Node.js.
 
 ## Chạy local
 
-Dùng Node.js 24.19.0 (phiên bản đã kiểm tra và cấu hình trên Netlify) cùng npm:
+Mở terminal tại thư mục project:
 
-```powershell
-cd africa_web
-npm.cmd ci
-npm.cmd run dev
+```bash
+npm ci
+npm run dev
 ```
 
-Mở địa chỉ terminal in ra, mặc định http://localhost:4321. Windows dùng npm.cmd nếu PowerShell chặn npm.ps1; macOS/Linux dùng npm.
+Truy cập địa chỉ được hiển thị trong terminal, mặc định **http://localhost:4321**.
 
-```powershell
-npm.cmd test
-npm.cmd run preview
+Trên Windows, nếu PowerShell chặn `npm.ps1`, dùng `npm.cmd` thay cho `npm`.
+
+## Build và kiểm tra
+
+```bash
+npm run build
+npm run preview
 ```
 
-Lệnh test build site và kiểm tra các trang, menu active, link, thứ tự script và tài nguyên local. Preview phục vụ bản build trong dist.
+- `build`: tạo website tĩnh trong thư mục `dist`.
+- `preview`: xem thử bản build trên máy.
 
-## Deploy Netlify
+Chạy bộ kiểm tra:
 
-Nếu repo chứa cả Africa, đặt **Base directory = africa_web** (tính từ gốc repo). Nếu repo chỉ chứa nội dung thư mục này, để Base directory trống.
+```bash
+npm test
+```
 
-- **Build command:** `npm run build`.
-- **Publish directory:** `dist`, tính từ base directory.
-- File `netlify.toml` cấu hình build, publish và Node.
-- Không cần .NET, adapter Netlify hay Functions cho bản static này.
-- Không đặt rewrite `/* /index.html 200`: đây là website nhiều trang HTML riêng.
-- Deploy thủ công: chạy `npm.cmd run build`, tải thư mục `dist` lên Netlify.
-- `public/_redirects` giữ redirect 301 từ `/Company/Index` sang `/Company/`, kể cả khi upload dist thủ công.
+Lệnh này build website và kiểm tra các trang, menu đang được chọn, liên kết, thứ tự tải script và tài nguyên local.
 
-## Cấu hình Dashboard
+## Cấu trúc thư mục
 
-Đặt biến môi trường `PUBLIC_AFRICA_DASHBOARD_URL` trong Netlify thành URL đầy đủ của hệ thống Africa, ví dụ `https://app.example.com/Dashboards`, trước khi build.
+```text
+africa_web/
+├── src/
+│   ├── layouts/
+│   │   └── CompanyLayout.astro
+│   └── pages/
+│       ├── index.astro
+│       └── Company/
+│           ├── index.astro
+│           ├── About.astro
+│           ├── History.astro
+│           ├── Services.astro
+│           ├── News.astro
+│           └── Contact.astro
+├── public/
+│   ├── css/uni-style.css
+│   ├── js/uni-script.js
+│   ├── js/uni-i18n.js
+│   ├── img/company/
+│   └── _redirects
+├── tests/
+├── astro.config.mjs
+├── netlify.toml
+├── package.json
+└── package-lock.json
+```
 
-Local có thể copy `.env.example` sang `.env` và điền URL. Khi chưa cấu hình, link Dashboard/Đăng nhập quản trị được ẩn. URL này công khai trong HTML; không đưa bí mật vào đây. Thay biến môi trường cần build/deploy lại.
+## Chỉnh sửa nội dung và giao diện
 
-## Cấu trúc
+- **Nội dung từng trang:** chỉnh các file trong `src/pages/Company/`.
+- **Header, footer, menu và metadata chung:** chỉnh `src/layouts/CompanyLayout.astro`.
+- **Màu sắc, bố cục và responsive:** chỉnh `public/css/uni-style.css`.
+- **Menu và hiệu ứng tương tác:** chỉnh `public/js/uni-script.js`.
+- **Bản dịch tiếng Việt/tiếng Anh:** chỉnh `public/js/uni-i18n.js`; giữ các khóa `data-i18n` trong giao diện đồng bộ với bản dịch.
+- **Hình ảnh:** đặt trong `public/img/company/` và tham chiếu bằng đường dẫn `/img/company/...`.
 
-| URL | File |
+## Triển khai Netlify
+
+Khi kết nối repository chứa project ở thư mục gốc:
+
+| Thiết lập | Giá trị |
 |---|---|
-| / và /Company/ | src/pages/index.astro, src/pages/Company/index.astro |
-| /Company/About/ | src/pages/Company/About.astro |
-| /Company/History/ | src/pages/Company/History.astro |
-| /Company/Services/ | src/pages/Company/Services.astro |
-| /Company/News/ | src/pages/Company/News.astro |
-| /Company/Contact/ | src/pages/Company/Contact.astro |
+| Base directory | Để trống |
+| Build command | `npm run build` |
+| Publish directory | `dist` |
+| Node.js | `24.19.0` |
 
-- `src/layouts/CompanyLayout.astro`: header, footer, menu và metadata chung.
-- `public/css/uni-style.css`: giao diện.
-- `public/js/uni-script.js`: tương tác.
-- `public/js/uni-i18n.js`: nội dung đa ngôn ngữ.
-- `public/img/company`: ảnh.
-- `package-lock.json`: khóa phiên bản dependency, cần commit cùng package.json.
+Nếu project nằm trong thư mục con của repository, đặt **Base directory** bằng đường dẫn tới thư mục chứa `package.json` và `netlify.toml`.
 
-## Phạm vi và giới hạn
+File `netlify.toml` khai báo cấu hình build. Commit cả `package.json` và `package-lock.json` để giữ phiên bản dependency nhất quán.
 
-- Bản gốc vẫn ở source/Africa.Web; chỉ project africa_web được chuyển sang Astro.
-- Chưa có CMS/admin như WordPress. Nội dung chỉnh qua file Astro và JS.
-- Form liên hệ/newsletter vẫn là demo: hiện thông báo, chưa gửi email/lưu yêu cầu. Cần nối dịch vụ nhận form trước khi dùng thực tế.
-- Link tin tức chi tiết/mạng xã hội dạng # giữ nguyên bản gốc.
-- Google Fonts, Font Awesome và dịch vụ nhúng bên ngoài cần Internet.
-- Chưa deploy lên tài khoản Netlify hoặc đổi DNS. Không thay đổi database hay hệ thống quản lý Africa.
+Có thể deploy thủ công bằng cách chạy `npm run build` rồi tải thư mục `dist` lên Netlify.
+
+Website có nhiều trang HTML riêng; không thêm rewrite toàn bộ URL về `/index.html`. File `public/_redirects` cấu hình chuyển hướng `/Company/Index` về `/Company/`.
+
+### Liên kết quản trị tùy chọn
+
+Biến môi trường `PUBLIC_AFRICA_DASHBOARD_URL` cấu hình địa chỉ cho nút Dashboard/Đăng nhập quản trị.
+
+- Local: sao chép `.env.example` thành `.env` và điền URL đầy đủ.
+- Netlify: đặt biến môi trường trước khi build.
+- Để trống nếu không muốn hiển thị các liên kết này.
+- Build/deploy lại sau khi thay đổi cấu hình.
+- Đây là URL công khai trong HTML; không chứa mật khẩu hoặc thông tin bí mật.
+
+## Lưu ý
+
+- Nội dung được quản lý qua file Astro và JavaScript.
+- Form liên hệ và đăng ký bản tin hiện là giao diện demo, chưa gửi email hoặc lưu yêu cầu.
+- Các liên kết dạng `#` cần được điền địa chỉ đích khi có nội dung chính thức.
+- Google Fonts, Font Awesome và các dịch vụ nhúng bên ngoài cần kết nối Internet.
